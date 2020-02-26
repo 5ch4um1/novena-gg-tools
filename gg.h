@@ -1,7 +1,7 @@
 #ifndef _GG_H
 #define _GG_H
 
-#define GG_ADDRESS        (0x16 >> 1)
+#define GG_ADDRESS        (0x0b >> 1)
 
 void setFlashOkVoltage(int file, uint16_t millivolts);
 
