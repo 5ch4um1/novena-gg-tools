@@ -12,7 +12,7 @@
 
 int main()
 {
-    const char * devName = "/dev/i2c-0";
+    const char * devName = "/dev/i2c-1";
 
     // Open up the I2C bus
     int file = open(devName, O_RDWR);
