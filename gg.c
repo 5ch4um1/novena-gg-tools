@@ -69,9 +69,11 @@ void setCellMode(int file)
     }
 }
 
-int enterBootRom(int file)
-{
-    return i2c_smbus_write_word_data(file, 0, 0xf00);
+int enterBootRom(int file) {
+i2c_smbus_write_word_data(file, 0x70, 0x0214);
+uint32_t key = i2c_smbus_read_word_data(file, 0x73);
+i2c_smbus_write_word_data(file, 0x71, 0x10000 - key);
+return i2c_smbus_write_word_data(file, 0x70, 0x0514);
 }
 
 int exitBootRom(int file)
